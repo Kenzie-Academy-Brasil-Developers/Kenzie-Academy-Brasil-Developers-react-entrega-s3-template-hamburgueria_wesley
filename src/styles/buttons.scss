@@ -1,0 +1,17 @@
+button {
+    height: 40px;
+    border: none;
+    padding: 0 1.25rem;
+    border-radius: 8px;
+    align-items: center;
+    font-size: 1.125rem;
+    display: inline-flex;
+    transition: 0.5s ease;
+    justify-content: center;
+    color: var(--title-color-1);
+    background-color: var(--color-primary);
+    
+    &:hover {
+    background-color: var(--color-primary-Hover);
+    }
+}

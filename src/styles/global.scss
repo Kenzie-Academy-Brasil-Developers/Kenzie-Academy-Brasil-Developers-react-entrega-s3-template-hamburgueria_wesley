@@ -1,0 +1,48 @@
+:root {
+    --bg-color-primary: #FFFFFF;
+
+    --color-spotlight: #03B898;
+
+    --grey-0: #F5F5F5;
+    --grey-100: #E0E0E0;
+    --grey-300: #828282;
+    --grey-600: #333333;
+
+    --text-color: #FFFFFF;
+
+    --color-primary: #27AE60;
+    --color-secondary: #EB5757;
+
+    --color-button: #BDBDBD;
+    --color-button-focus: #27AE60;
+
+    --font-family-global-1: 'Inter', sans-serif;
+
+    --font-weight-sm: 400;
+    --font-weight-md: 600;
+    --font-weight-lg: 700;
+
+    --font-title-1: 1.625rem;
+    --font-title-2: 1.375rem;
+    --font-title-3: 1.125rem;
+
+
+    --font-text-headline: 1rem;
+    --font-text-body: 0.875rem;
+
+
+
+
+    --font-label: 0.75rem;
+
+    --font-Paragraph: 0.75rem;
+
+
+}
+
+html {}
+
+body {
+    font-family: var(--font-family-global-1);
+    background: var(--bg-color-primary);
+}

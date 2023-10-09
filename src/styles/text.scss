@@ -1,0 +1,46 @@
+h1 {
+    color: var(--title-color-1);
+    font-weight: var(--font-weight-lg);
+    font-size: var(--font-title-1);
+}
+
+h2 {
+    font-style: normal;
+    line-height: normal;
+    color: var(--text-color);
+    font-size: var(--font-title-2);
+    font-weight: var(--font-weight-lg);
+}
+
+h3 {
+
+    font-style: normal;
+    line-height: normal;
+    color: var(--grey-600);
+    font-size: var(--font-title-3);
+    font-weight: var(--font-weight-lg);
+}
+
+label {
+
+    font-style: normal;
+    color: var(--grey-4);
+    line-height: 1.375rem;
+    font-size: var(--font-label);
+    font-weight: var(--font-weight-sm);
+    font-family: var(--font-family-global-2);
+}
+
+p {
+    font-style: normal;
+    line-height: 1.875rem;
+    color: var(--grey-3);
+    font-size: var(--font-Paragraph);
+    font-weight: var(--font-weight-sm);
+}
+
+a {
+    color: var(--color-primary);
+    font-size: var(--font-Link);
+    font-weight: var(--font-bold);
+}

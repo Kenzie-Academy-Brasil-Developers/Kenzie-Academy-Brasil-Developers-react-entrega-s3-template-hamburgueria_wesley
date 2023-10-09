@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+input,
+select{
+    width: 100%;
+    border: none;
+    gap: 0.625rem;
+    display: flex;
+    height: 52.8px;
+    padding: 0px 1rem;
+    align-items: center;
+    background-color: var( --grey-1);
+}
+
+img {
+     width: 100%;
+}

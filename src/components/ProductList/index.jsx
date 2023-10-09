@@ -1,11 +1,19 @@
 import { ProductCard } from "./ProductCard";
+import styles from './styles.module.scss'
 
-export const ProductList = ({ productList }) => {
+export const ProductList = ({ productList, handleAddCart }) => {
+   const teste = (data) => {
+      handleAddCart(data);
+   }
+
    return (
-      <ul>
-         {productList.map((product) => (
-            <ProductCard key={product.id} product={product} />
-         ))}
-      </ul>
+      <section className=".container">
+         <ul>
+            {productList.map((product) => (
+               <ProductCard isAddProduct={teste} key={product.id} product={product} />
+            ))}
+         </ul>
+
+      </section>
    );
 };
