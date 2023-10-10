@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from './styles.module.scss'
@@ -10,6 +10,9 @@ export const Header = ({ cartItemCount, handleShowModal }) => {
       handleShowModal(true)
    }
 
+   useEffect(() => {
+      setValue(cartItemCount)
+   }, [cartItemCount])
    return (
       <header className=".container">
          <div>
@@ -27,7 +30,7 @@ export const Header = ({ cartItemCount, handleShowModal }) => {
                </form> */}
                <button onClick={handleModal}>
                   <MdShoppingCart size={21} fill="#BDBDBD" />
-                  <span>{cartItemCount}</span>
+                  <span>{value}</span>
                </button>
             </div>
          </div>

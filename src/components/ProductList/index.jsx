@@ -2,7 +2,7 @@ import { ProductCard } from "./ProductCard";
 import styles from './styles.module.scss'
 
 export const ProductList = ({ productList, handleAddCart }) => {
-   const teste = (data) => {
+   const addItem = (data) => {
       handleAddCart(data);
    }
 
@@ -10,7 +10,7 @@ export const ProductList = ({ productList, handleAddCart }) => {
       <section className=".container">
          <ul>
             {productList.map((product) => (
-               <ProductCard isAddProduct={teste} key={product.id} product={product} />
+               <ProductCard isAddProduct={addItem} key={product.id} product={product} />
             ))}
          </ul>
 

@@ -19,11 +19,8 @@ export const HomePage = () => {
 
    const handleShowItems = async () => {
       const resp = await getAllItems()
-      console.log(resp);
       setProductList(resp)
-      setCartItemCount(resp.length)
    }
-
 
    const handleHeaderButtonClick = (data) => {
       setOpenModal(data)
@@ -31,18 +28,30 @@ export const HomePage = () => {
 
    const handleInsertCart = (product) => {
       setCartList([...cartList, product])
+      setCartItemCount(cartList.length)
+   }
+
+   const handleCloseModal = (data) => {
+      setOpenModal(data)
+   }
+
+   const handkeRemoveAll = () => {
+      setCartList([])
+      handleCloseModal()
    }
 
    useEffect(() => {
+
       handleShowItems()
    }, [])
-
    return (
       <>
          <Header handleShowModal={handleHeaderButtonClick} cartItemCount={cartItemCount} />
          <main>
             <ProductList handleAddCart={handleInsertCart} productList={productList} />
-            <CartModal isOpenModal={openModal} cartList={cartList} />
+            {openModal && (
+               <CartModal removeAllItems={handkeRemoveAll} cartList={cartList} onCloseModal={handleCloseModal} />
+            )}
          </main>
       </>
    );

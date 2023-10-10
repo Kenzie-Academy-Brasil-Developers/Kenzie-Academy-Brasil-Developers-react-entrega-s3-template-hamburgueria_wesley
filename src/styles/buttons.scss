@@ -9,9 +9,9 @@ button {
     transition: 0.5s ease;
     justify-content: center;
     color: var(--title-color-1);
-    background-color: var(--color-primary);
-    
-    &:hover {
-    background-color: var(--color-primary-Hover);
+    background-color: var(--color-button);
+
+    &:focus {
+        background-color: var(--color-button-focus);
     }
 }
