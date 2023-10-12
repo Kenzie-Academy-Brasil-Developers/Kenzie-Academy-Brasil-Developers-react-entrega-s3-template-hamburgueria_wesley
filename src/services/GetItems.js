@@ -13,6 +13,6 @@ export const getAllItems = async () => {
     .catch((err) => {
       console.log(err, "verifique a aplicação");
     });
-  console.log(readItems);
+
   return readItems;
 };

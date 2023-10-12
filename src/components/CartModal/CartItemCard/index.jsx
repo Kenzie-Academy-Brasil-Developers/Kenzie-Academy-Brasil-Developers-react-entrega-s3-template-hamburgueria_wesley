@@ -1,6 +1,10 @@
 import { MdDelete } from "react-icons/md";
 
-export const CartItemCard = ({ product }) => {
+export const CartItemCard = ({ product, onRemoveItem }) => {
+
+   const handleRemoveItem = () => {
+      onRemoveItem(product.id)
+   }
    return (
       <li>
          <div>
@@ -10,8 +14,8 @@ export const CartItemCard = ({ product }) => {
                <span>{`R$ ${product.price.toFixed(2)}`}</span>
             </div>
          </div>
-         <button aria-label="delete" title="Remover item">
-            <MdDelete size={21} />
+         <button onClick={handleRemoveItem} aria-label="delete" title="Remover item">
+            <MdDelete size={21} fill="#BDBDBD" />
          </button>
       </li>
    );

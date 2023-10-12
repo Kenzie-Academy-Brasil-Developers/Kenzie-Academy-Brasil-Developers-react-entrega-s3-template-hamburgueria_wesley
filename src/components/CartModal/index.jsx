@@ -3,7 +3,7 @@ import { CartItemCard } from "./CartItemCard";
 import styles from './styles.module.scss'
 import { useEffect, useState } from "react";
 
-export const CartModal = ({ cartList, onCloseModal, removeAllItems }) => {
+export const CartModal = ({ cartList, onCloseModal, removeAllItems, onRemoveItem }) => {
 
    const handleRemoveAll = () => {
       removeAllItems([])
@@ -14,6 +14,9 @@ export const CartModal = ({ cartList, onCloseModal, removeAllItems }) => {
 
    const handleCloseModal = () => {
       onCloseModal(false)
+   }
+   const handleRemoveItem = (id) => {
+      onRemoveItem(id)
    }
    return (
       <div className={styles.container_diolog} role="dialog" >
@@ -28,7 +31,7 @@ export const CartModal = ({ cartList, onCloseModal, removeAllItems }) => {
                <div >
                   <ul className={styles.list_cart}>
                      {cartList.map((product) => (
-                        <CartItemCard key={product.id} product={product} />
+                        <CartItemCard onRemoveItem={handleRemoveItem} key={product.id} product={product} />
                      ))}
                   </ul>
                </div>
