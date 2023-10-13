@@ -8,8 +8,7 @@ export const HomePage = () => {
    const ltg = localStorage.getItem("@humburgueria-kenzie")
 
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState([]);
-   const [cartItemCount, setCartItemCount] = useState(0);
+   const [cartList, setCartList] = useState(ltg ? JSON.parse(ltg) : []);
    const [openModal, setOpenModal] = useState(false)
 
    // useEffect montagem - carrega os produtos da API e joga em productList
@@ -24,23 +23,17 @@ export const HomePage = () => {
       setProductList(resp)
    }
    const handleHeaderButtonClick = (data) => {
-      const productLocal = JSON.parse(ltg)
-      setCartList([productLocal])
       setOpenModal(data)
-
    };
 
    const handleInsertCart = (product) => {
-
       const prod = cartList.some((item) => {
          return item.id === product.id
       })
-
       if (!prod) {
-         localStorage.setItem("@humburgueria-kenzie", JSON.stringify(product))
+
          setCartList([...cartList, product])
       }
-      setCartItemCount(cartList.length)
    }
    const handleCloseModal = (data) => {
       setOpenModal(data)
@@ -54,6 +47,7 @@ export const HomePage = () => {
    const handleRemoveItem = (id) => {
       const filterCart = cartList.filter((item) => {
          if (item.id !== id) {
+
             return item
          }
       })
@@ -62,10 +56,11 @@ export const HomePage = () => {
 
    useEffect(() => {
       handleShowItems()
-   }, []);
+      localStorage.setItem("@humburgueria-kenzie", JSON.stringify(cartList))
+   }, [cartList]);
    return (
       <>
-         <Header handleShowModal={handleHeaderButtonClick} cartItemCount={cartItemCount} />
+         <Header handleShowModal={handleHeaderButtonClick} cartList={cartList} />
          <main>
             <ProductList handleAddCart={handleInsertCart} productList={productList} />
             {openModal && (

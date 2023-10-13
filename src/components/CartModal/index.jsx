@@ -1,7 +1,6 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 import styles from './styles.module.scss'
-import { useEffect, useState } from "react";
 
 export const CartModal = ({ cartList, onCloseModal, removeAllItems, onRemoveItem }) => {
 
