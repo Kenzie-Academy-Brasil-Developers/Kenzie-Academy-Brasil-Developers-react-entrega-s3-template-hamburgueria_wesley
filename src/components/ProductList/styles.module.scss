@@ -14,6 +14,17 @@ section {
             align-items: center;
             flex-direction: column;
             border: 2px solid var(--grey-0);
+
+            &:hover {
+                border-radius: 5px;
+
+                border: 2px solid #27AE60;
+
+            }
+
+            button:hover {
+                height: 40px;
+            }
         }
 
         & li> :nth-child(1) {
